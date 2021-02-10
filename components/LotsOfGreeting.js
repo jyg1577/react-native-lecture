@@ -6,21 +6,22 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 })
+
 // props = {name:'Rexxar'}
-    
-// const {name} = props
+
+// const { name } = props
 //     |
-//     v
-// const name - props.name
+//     V
+// const name = props.name
 
 // const Greeting = (props) => {
-  const Greeting = ({ neme }) => {
+const Greeting = ({ name }) => {
   return (
     <View style={styles.center}>
                   {/* props.속성명 */}
-     { /* <Text>Hello {props.name}!</Text>*/}
-                  {/* props.속성명 */}
-      <Text>Hello {props.name}!</Text>
+      {/* <Text>Hello {props.name}!</Text> */}
+                  {/* 속성명 */}
+      <Text>Hello {name}!</Text>      
     </View>
   );
 }
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
 const LotsOfGreetings = () => {
   return (
     <View style={[styles.center, {top: 50}]}>
-                {/*속성명={값}*/}
+                {/*속성명={값} */}
       <Greeting name='Rexxar' />
       <Greeting name='Jaina' />
       <Greeting name='Valeera' />

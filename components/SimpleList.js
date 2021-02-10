@@ -14,15 +14,15 @@ const SimpleList = () => {
   const [item, setItem] = useState({});
 
   // memoizing function
-  // const 함수명 = useCallback(함수본체,[감지할변수])
+  // const 함수명 = useCallback(함수본체, [감지할변수])
 
   // 감지할 변수값이 바뀔 때마다 함수가 다시 생성되게 함.
   // 빈 배열이면 컴포넌트 처음 생길때만 함수가 생성된다.
-  const itemePressed = useCallback((data)=>{
+
+  const itemPressed = useCallback((data)=>{
     console.log(data);
     setItem(data);
-  },[]);
-
+  }, []);
 
   return (
     <View 
@@ -42,7 +42,7 @@ const SimpleList = () => {
       simpleData.map(data => {
         return (
           // 터치가 가능한 투명한 영역
-          <TouchableOpacity key={data.id} onPress={()=>itemePressed(data)}>
+          <TouchableOpacity key={data.id} onPress={()=>itemPressed(data)}>
             <Text>{data.id} {data.title}</Text>
           </TouchableOpacity>
         )
